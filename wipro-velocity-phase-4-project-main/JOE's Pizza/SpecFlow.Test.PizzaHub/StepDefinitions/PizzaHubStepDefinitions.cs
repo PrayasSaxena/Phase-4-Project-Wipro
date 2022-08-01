@@ -8,7 +8,7 @@ namespace SpecFlowCalculator.Specs.StepDefinitions
     [Binding]
     public class PizzahubStepDefinitions
     {
-        private ChromeDriver driver;
+        public ChromeDriver driver;
 
         [Given(@"i have to navigate to pizzahub page")]
         public void GivenIHaveToNavigateToPizzahubPage()
@@ -19,12 +19,13 @@ namespace SpecFlowCalculator.Specs.StepDefinitions
 
         }
 
-        [Given(@"click on all pizza button and add pizza to cart")]
+        [Then(@"click on all pizza button and add pizza to cart")]
         public void GivenClickOnAllPizzaButtonAndAddPizzaToCart()
         {
             driver.FindElement(By.LinkText("All Pizaa\'s")).Click();
             driver.FindElement(By.LinkText("Add to cart")).Click();
             driver.FindElement(By.LinkText("2")).Click();
+            Thread.Sleep(1000);
             driver.FindElement(By.LinkText("Add to cart")).Click();
             driver.FindElement(By.LinkText("3")).Click();
             driver.FindElement(By.LinkText("Add to cart")).Click();
@@ -36,6 +37,7 @@ namespace SpecFlowCalculator.Specs.StepDefinitions
             driver.FindElement(By.LinkText("Veg")).Click();
             driver.FindElement(By.CssSelector(".col-4:nth-child(2) .btn")).Click();
             driver.FindElement(By.LinkText("Non_Veg")).Click();
+            Thread.Sleep(1000);
             driver.FindElement(By.CssSelector(".col-4:nth-child(2) .btn")).Click();
         }
 
@@ -52,6 +54,7 @@ namespace SpecFlowCalculator.Specs.StepDefinitions
             driver.FindElement(By.LinkText("-")).Click();
             driver.FindElement(By.LinkText("+")).Click();
             driver.FindElement(By.CssSelector("tr:nth-child(3) .btn-primary")).Click();
+            Thread.Sleep(1000);
             driver.FindElement(By.CssSelector("tr:nth-child(4) .btn-info")).Click();
         }
 

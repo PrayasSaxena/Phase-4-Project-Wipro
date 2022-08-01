@@ -3,7 +3,7 @@ using OpenQA.Selenium;
 using OpenQA.Selenium.Chrome;
 using NUnit.Framework;
 using NUnit.Framework.Internal;
-
+using System.Threading;
 
 namespace Selenium.Test.PizzaHub
 {
@@ -42,7 +42,8 @@ namespace Selenium.Test.PizzaHub
             driver.FindElement(By.LinkText("Add to cart")).Click();
             driver.FindElement(By.LinkText("2")).Click();
             driver.FindElement(By.LinkText("Add to cart")).Click();
-            driver.FindElement(By.LinkText("2")).Click();
+            Thread.Sleep(1000);
+            driver.FindElement(By.LinkText("3")).Click();
             driver.FindElement(By.LinkText("Add to cart")).Click();
 
             //selecting veg pizza from list
